@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Hub | Maple Content</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-red-600">Maple Content</h1>
+      <nav class="space-x-6 text-sm md:text-base">
+        <a href="#social" class="hover:text-red-600">Social Media</a>
+        <a href="#video" class="hover:text-red-600">Video</a>
+        <a href="#blogs" class="hover:text-red-600">Blogs</a>
+        <a href="#press" class="hover:text-red-600">Press</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section Template -->
+  <main class="max-w-6xl mx-auto px-4 py-12 space-y-16">
+
+    <!-- Social Media Campaigns -->
+    <section id="social">
+      <h2 class="text-3xl font-bold text-center mb-8">Social Media Campaigns</h2>
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Card -->
+        <a href="#" class="block bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
+          <img src="https://via.placeholder.com/500x500" alt="Campaign 1" class="w-full h-[300px] object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Campaign Title</h3>
+            <p class="text-gray-600 text-sm mt-2">Brief description of the social media campaign, outcomes, and goals achieved.</p>
+          </div>
+        </a>
+        <!-- Duplicate and customize more cards -->
+      </div>
+    </section>
+
+    <!-- Video Content -->
+    <section id="video">
+      <h2 class="text-3xl font-bold text-center mb-8">Video Content</h2>
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <a href="#" class="block bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
+          <img src="https://via.placeholder.com/500x500" alt="Video Project" class="w-full h-[300px] object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Video Title</h3>
+            <p class="text-gray-600 text-sm mt-2">Short description of the video project, purpose, and format used.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Blogs -->
+    <section id="blogs">
+      <h2 class="text-3xl font-bold text-center mb-8">Blogs</h2>
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <a href="#" class="block bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
+          <img src="https://via.placeholder.com/500x500" alt="Blog Thumbnail" class="w-full h-[300px] object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Blog Title</h3>
+            <p class="text-gray-600 text-sm mt-2">Brief overview of the blog topic and what readers can learn.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Press Releases -->
+    <section id="press">
+      <h2 class="text-3xl font-bold text-center mb-8">Press Releases</h2>
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <a href="#" class="block bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
+          <img src="https://via.placeholder.com/500x500" alt="Press Image" class="w-full h-[300px] object-cover">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Release Title</h3>
+            <p class="text-gray-600 text-sm mt-2">Summary of the press release, its announcement, and key coverage points.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-6">
+    <p>&copy; 2025 Maple Content | Built by Pat</p>
+  </footer>
+</body>
+</html>
