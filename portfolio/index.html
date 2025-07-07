@@ -6,6 +6,16 @@
   <title>Patrick Leyland | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+</style>
+
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
@@ -33,7 +43,7 @@
     <button id="leftBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
       <i class="fas fa-chevron-left"></i>
     </button>
-    <div id="social-cards" class="flex gap-4 overflow-x-auto scroll-smooth transition-all">
+    <div id="social-cards" class="flex gap-4 overflow-x-scroll no-scrollbar scroll-smooth transition-all">
       <!-- 6 Cards -->
       <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
         <img src="https://via.placeholder.com/500x500" alt="Campaign 1" class="w-full h-[300px] object-cover">
@@ -201,10 +211,7 @@
     const container = document.getElementById(containerId);
     const leftBtn = document.getElementById(leftBtnId);
     const rightBtn = document.getElementById(rightBtnId);
-
-    if (!container || !leftBtn || !rightBtn) return;
-
-    const scrollAmount = 320; // Adjust to match card width + gap
+    const scrollAmount = 340; // Adjust if needed based on card width + gap
 
     leftBtn.addEventListener("click", () => {
       container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
@@ -220,6 +227,7 @@
   setupCarousel("blog-cards", "leftBtnBlog", "rightBtnBlog");
   setupCarousel("press-cards", "leftBtnPress", "rightBtnPress");
 </script>
+
 
 </body>
 </html>
