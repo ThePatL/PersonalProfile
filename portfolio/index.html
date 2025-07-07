@@ -25,22 +25,24 @@
 
   <!-- Social Media Section -->
 <section id="social">
-  <div class="mb-6">
+  <div class="max-w-7xl mx-auto px-6 mb-6">
     <h2 class="text-3xl font-bold mb-1 text-left">Social Media Content</h2>
     <p class="text-sm text-gray-600 text-left">A selection of campaigns showcasing engagement strategies, creative visuals, and measurable outcomes.</p>
   </div>
-  <div class="relative">
+  <div class="relative max-w-7xl mx-auto px-6">
     <button id="leftBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
       <i class="fas fa-chevron-left"></i>
     </button>
     <div id="social-cards" class="flex gap-4 overflow-hidden scroll-smooth transition-all">
+      <!-- 6 Cards -->
+      ${[1,2,3,4,5,6].map(i => `
       <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/500x500" alt="Campaign 1" class="w-full h-[300px] object-cover">
+        <img src="https://via.placeholder.com/500x500" alt="Campaign ${i}" class="w-full h-[300px] object-cover">
         <div class="p-4">
-          <h3 class="text-lg font-semibold">Campaign 1</h3>
-          <p class="text-gray-600 text-sm mt-2">Brief description here.</p>
+          <h3 class="text-lg font-semibold">Campaign ${i}</h3>
+          <p class="text-gray-600 text-sm mt-2">Brief description for campaign ${i}.</p>
         </div>
-      </a>
+      </a>`).join('')}
     </div>
     <button id="rightBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
       <i class="fas fa-chevron-right"></i>
@@ -55,22 +57,24 @@
 
 <!-- Video Content Section -->
 <section id="video">
-  <div class="mb-6 mt-12">
+  <div class="max-w-7xl mx-auto px-6 mb-6 mt-12">
     <h2 class="text-3xl font-bold mb-1 text-left">Video Content</h2>
     <p class="text-sm text-gray-600 text-left">Videos written, directed, or produced to inform, educate, and entertain across multiple platforms.</p>
   </div>
-  <div class="relative">
+  <div class="relative max-w-7xl mx-auto px-6">
     <button id="leftBtnVideo" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
       <i class="fas fa-chevron-left"></i>
     </button>
     <div id="video-cards" class="flex gap-4 overflow-hidden scroll-smooth transition-all">
+      <!-- 6 Cards -->
+      ${[1,2,3,4,5,6].map(i => `
       <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/500x500" alt="Video Project" class="w-full h-[300px] object-cover">
+        <img src="https://via.placeholder.com/500x500" alt="Video ${i}" class="w-full h-[300px] object-cover">
         <div class="p-4">
-          <h3 class="text-lg font-semibold">Video 1</h3>
-          <p class="text-gray-600 text-sm mt-2">Description here.</p>
+          <h3 class="text-lg font-semibold">Video ${i}</h3>
+          <p class="text-gray-600 text-sm mt-2">Short summary for video project ${i}.</p>
         </div>
-      </a>
+      </a>`).join('')}
     </div>
     <button id="rightBtnVideo" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
       <i class="fas fa-chevron-right"></i>
@@ -85,22 +89,24 @@
 
 <!-- Blog Section -->
 <section id="blogs">
-  <div class="mb-6 mt-12">
+  <div class="max-w-7xl mx-auto px-6 mb-6 mt-12">
     <h2 class="text-3xl font-bold mb-1 text-left">Blogs</h2>
     <p class="text-sm text-gray-600 text-left">Original articles offering insights, how-to guides, and storytelling around key topics and trends.</p>
   </div>
-  <div class="relative">
+  <div class="relative max-w-7xl mx-auto px-6">
     <button id="leftBtnBlog" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
       <i class="fas fa-chevron-left"></i>
     </button>
     <div id="blog-cards" class="flex gap-4 overflow-hidden scroll-smooth transition-all">
+      <!-- 6 Cards -->
+      ${[1,2,3,4,5,6].map(i => `
       <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/500x500" alt="Blog Thumbnail" class="w-full h-[300px] object-cover">
+        <img src="https://via.placeholder.com/500x500" alt="Blog ${i}" class="w-full h-[300px] object-cover">
         <div class="p-4">
-          <h3 class="text-lg font-semibold">Blog 1</h3>
-          <p class="text-gray-600 text-sm mt-2">Description here.</p>
+          <h3 class="text-lg font-semibold">Blog ${i}</h3>
+          <p class="text-gray-600 text-sm mt-2">Intro to blog post ${i} and what readers can learn.</p>
         </div>
-      </a>
+      </a>`).join('')}
     </div>
     <button id="rightBtnBlog" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
       <i class="fas fa-chevron-right"></i>
@@ -115,22 +121,24 @@
 
 <!-- Press Releases Section -->
 <section id="press">
-  <div class="mb-6 mt-12">
+  <div class="max-w-7xl mx-auto px-6 mb-6 mt-12">
     <h2 class="text-3xl font-bold mb-1 text-left">Press Releases</h2>
     <p class="text-sm text-gray-600 text-left">Media and public-facing announcements designed to inform and attract coverage.</p>
   </div>
-  <div class="relative">
+  <div class="relative max-w-7xl mx-auto px-6">
     <button id="leftBtnPress" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
       <i class="fas fa-chevron-left"></i>
     </button>
     <div id="press-cards" class="flex gap-4 overflow-hidden scroll-smooth transition-all">
+      <!-- 6 Cards -->
+      ${[1,2,3,4,5,6].map(i => `
       <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/500x500" alt="Press Image" class="w-full h-[300px] object-cover">
+        <img src="https://via.placeholder.com/500x500" alt="Press Release ${i}" class="w-full h-[300px] object-cover">
         <div class="p-4">
-          <h3 class="text-lg font-semibold">Release 1</h3>
-          <p class="text-gray-600 text-sm mt-2">Description here.</p>
+          <h3 class="text-lg font-semibold">Release ${i}</h3>
+          <p class="text-gray-600 text-sm mt-2">Overview of press release ${i} and key takeaways.</p>
         </div>
-      </a>
+      </a>`).join('')}
     </div>
     <button id="rightBtnPress" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
       <i class="fas fa-chevron-right"></i>
@@ -142,6 +150,7 @@
     </div>
   </div>
 </section>
+
 
 <script>
   const setupCarousel = (prefix) => {
