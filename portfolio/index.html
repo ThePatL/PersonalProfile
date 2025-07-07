@@ -28,65 +28,34 @@
 
     <!-- Social Media Campaigns -->
     <section id="social">
-  <h2 class="text-3xl font-bold text-center mb-8">Social Media Content</h2>
+  <div class="mb-6">
+    <h2 class="text-3xl font-bold mb-1 text-left">Social Media Content</h2>
+    <p class="text-sm text-gray-600 text-left">A selection of campaigns showcasing engagement strategies, creative visuals, and measurable outcomes.</p>
+  </div>
 
-  <!-- Container -->
   <div class="relative">
-    <div id="social-cards" class="flex gap-4 overflow-x-auto scroll-smooth max-w-full pb-4">
-      
-      <!-- Always-visible Cards -->
+    <!-- Left Arrow -->
+    <button id="leftBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <!-- Cards Container -->
+    <div id="social-cards" class="flex gap-4 overflow-hidden scroll-smooth transition-all">
+      <!-- Cards (4 initially visible) -->
       <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
         <img src="https://via.placeholder.com/500x500" alt="Campaign 1" class="w-full h-[300px] object-cover">
         <div class="p-4">
           <h3 class="text-lg font-semibold">Campaign 1</h3>
-          <p class="text-gray-600 text-sm mt-2">Description goes here.</p>
+          <p class="text-gray-600 text-sm mt-2">Brief description here.</p>
         </div>
       </a>
-
-      <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/500x500" alt="Campaign 2" class="w-full h-[300px] object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Campaign 2</h3>
-          <p class="text-gray-600 text-sm mt-2">Description goes here.</p>
-        </div>
-      </a>
-
-      <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/500x500" alt="Campaign 3" class="w-full h-[300px] object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Campaign 3</h3>
-          <p class="text-gray-600 text-sm mt-2">Description goes here.</p>
-        </div>
-      </a>
-
-      <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/500x500" alt="Campaign 4" class="w-full h-[300px] object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Campaign 4</h3>
-          <p class="text-gray-600 text-sm mt-2">Description goes here.</p>
-        </div>
-      </a>
-
-      <!-- Hidden Cards -->
-      <div id="social-extra" class="flex gap-4 hidden">
-        <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
-          <img src="https://via.placeholder.com/500x500" alt="Campaign 5" class="w-full h-[300px] object-cover">
-          <div class="p-4">
-            <h3 class="text-lg font-semibold">Campaign 5</h3>
-            <p class="text-gray-600 text-sm mt-2">Extra campaign description.</p>
-          </div>
-        </a>
-
-        <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
-          <img src="https://via.placeholder.com/500x500" alt="Campaign 6" class="w-full h-[300px] object-cover">
-          <div class="p-4">
-            <h3 class="text-lg font-semibold">Campaign 6</h3>
-            <p class="text-gray-600 text-sm mt-2">Extra campaign description.</p>
-          </div>
-        </a>
-        <!-- Add more hidden cards as needed -->
-      </div>
+      <!-- Duplicate and update more cards -->
     </div>
+
+    <!-- Right Arrow -->
+    <button id="rightBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
+      <i class="fas fa-chevron-right"></i>
+    </button>
 
     <!-- Show All Button -->
     <div class="text-center mt-4">
@@ -96,6 +65,30 @@
     </div>
   </div>
 </section>
+
+<script>
+  const socialCards = document.getElementById('social-cards');
+  const rightBtn = document.getElementById('rightBtn');
+  const leftBtn = document.getElementById('leftBtn');
+  const toggleBtn = document.getElementById('toggleSocial');
+
+  rightBtn.addEventListener('click', () => {
+    socialCards.scrollBy({ left: 320, behavior: 'smooth' });
+  });
+
+  leftBtn.addEventListener('click', () => {
+    socialCards.scrollBy({ left: -320, behavior: 'smooth' });
+  });
+
+  toggleBtn.addEventListener('click', () => {
+    socialCards.classList.toggle('overflow-x-auto');
+    toggleBtn.textContent = toggleBtn.textContent === 'Show All' ? 'Show Less' : 'Show All';
+  });
+</script>
+
+<!-- Repeat similar structure for other sections like Video, Blogs, and Press. -->
+<!-- Ensure each section has unique IDs for arrows and containers: e.g., video-cards, toggleVideo, etc. -->
+<!-- Copy the HTML section block and JS logic per category, updating IDs accordingly. -->
 
     <!-- Video Content -->
     <section id="video">
