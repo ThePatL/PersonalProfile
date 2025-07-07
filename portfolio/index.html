@@ -1,236 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Patrick Leyland | Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;  /* IE/Edge */
-    scrollbar-width: none;     /* Firefox */
-  }
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        
+        .hidden-section {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        
+        .visible-section {
+            max-height: 2000px;
+            transition: max-height 0.8s ease-in;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-
-  <!-- Header -->
-  <header class="bg-white shadow sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold text-red-600">Patrick Leyland</h1>
-      <nav class="space-x-6 text-sm md:text-base">
-        <a href="#social" class="hover:text-red-600">Social Media</a>
-        <a href="#video" class="hover:text-red-600">Video</a>
-        <a href="#blogs" class="hover:text-red-600">Blogs</a>
-        <a href="#press" class="hover:text-red-600">Press</a>
-        <a href="https://www.patleyland.ca" class="hover:text-red-600">Main</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Social Media Section -->
-<section id="social">
-  <div class="max-w-7xl mx-auto px-6 mb-6">
-    <h2 class="text-3xl font-bold mb-1 text-left">Social Media Content</h2>
-    <p class="text-sm text-gray-600 text-left">A selection of campaigns showcasing engagement strategies, creative visuals, and measurable outcomes.</p>
-  </div>
-
-  <div class="relative max-w-7xl mx-auto px-6">
-    <!-- Left Button -->
-    <button id="leftBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
-      <i class="fas fa-chevron-left"></i>
-    <!-- Cards Container -->
-    <div id="social-cards" class="flex gap-4 overflow-x-scroll no-scrollbar scroll-smooth transition-all">
-      <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/500x500" alt="Campaign 1" class="w-full h-[300px] object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Campaign 1</h3>
-          <p class="text-gray-600 text-sm mt-2">Brief description.</p>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-leaf maple-leaf text-2xl"></i>
+                    <span class="text-xl font-bold">Patrick Leyland</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900">About</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900">Projects</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900">Contact</a>
+            </nav>
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
         </div>
-      </a>
-      <!-- Duplicate for Campaign 2–6 -->
-    </div>
-            <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/500x500" alt="Campaign 2" class="w-full h-[300px] object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Campaign 2</h3>
-          <p class="text-gray-600 text-sm mt-2">Brief description for campaign 2.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-6 py-12">
+        <!-- Hero Section -->
+        <section class="mb-16 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">My Projects</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Here's a collection of my work across different mediums. Each project represents my dedication to quality, creativity, and effective communication. Explore the sections below to see examples of my work in blog content, press releases, social media, and video production.
+            </p>
+        </section>
+
+        <!-- Blog Content Section -->
+        <section class="mb-20">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Blog Content</h2>
+                <button id="toggleBlog" class="text-red-600 hover:text-red-800 font-medium">View All</button>
+            </div>
+            <p class="text-gray-600 mb-8 max-w-3xl">
+                Engaging long-form content that educates, informs, and entertains readers. Each blog post is meticulously researched and crafted to provide value to the target audience.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                <!-- Blog Cards (visible by default) -->
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Tech Trends 2023</h3>
+                        <p class="text-gray-600">An in-depth analysis of emerging technologies that will shape the coming year.</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Sustainable Living</h3>
+                        <p class="text-gray-600">Practical tips for reducing your carbon footprint in everyday life.</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Remote Work Guide</h3>
+                        <p class="text-gray-600">How to maintain productivity and work-life balance when working from home.</p>
+                    </div>
+                </a>
+            </div>
+            <!-- Hidden Blog Cards -->
+            <div id="blogSection" class="hidden-section grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Mental Health Awareness</h3>
+                        <p class="text-gray-600">Breaking the stigma and promoting mental wellbeing in the workplace.</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">AI in Healthcare</h3>
+                        <p class="text-gray-600">Exploring how artificial intelligence is revolutionizing patient care.</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Financial Planning</h3>
+                        <p class="text-gray-600">Strategies for building wealth and securing your financial future.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Press Releases Section -->
+        <section class="mb-20">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Press Releases</h2>
+                <button id="togglePress" class="text-red-600 hover:text-red-800 font-medium">View All</button>
+            </div>
+            <p class="text-gray-600 mb-8 max-w-3xl">
+                Professionally crafted announcements designed to capture media attention and communicate key messages effectively to stakeholders and the public.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                <!-- Press Cards (visible by default) -->
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Company Merger</h3>
+                        <p class="text-gray-600">Announcing the strategic merger of two industry leaders to better serve customers.</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Product Launch</h3>
+                        <p class="text-gray-600">Introducing our revolutionary new product that solves a critical market need.</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Charity Initiative</h3>
+                        <p class="text-gray-600">Our commitment to giving back through a new community support program.</p>
+                    </div>
+                </a>
+            </div>
+            <!-- Hidden Press Cards -->
+            <div id="pressSection" class="hidden-section grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Leadership Change</h3>
+                        <p class="text-gray-600">Welcoming our new CEO who brings decades of industry experience.</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Award Announcement</h3>
+                        <p class="text-gray-600">Recognized as one of the best workplaces for the third consecutive year.</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Sustainability Report</h3>
+                        <p class="text-gray-600">Our annual report on environmental initiatives and future goals.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Social Media Content Section -->
+        <section class="mb-20">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Social Media Content</h2>
+                <button id="toggleSocial" class="text-red-600 hover:text-red-800 font-medium">View All</button>
+            </div>
+            <p class="text-gray-600 mb-8 max-w-3xl">
+                Eye-catching and shareable content designed to engage audiences across platforms like Instagram, Twitter, LinkedIn, and Facebook. Each piece is tailored to platform-specific best practices.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                <!-- Social Cards (visible by default) -->
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Instagram Campaign</h3>
+                        <p class="text-gray-600">Visual storytelling that increased engagement by 150% for our client.</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">LinkedIn Series</h3>
+                        <p class="text-gray-600">Thought leadership content that positioned our client as an industry expert.</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Twitter Thread</h3>
+                        <p class="text-gray-600">Breaking down complex topics into digestible, engaging tweets.</p>
+                    </div>
+                </a>
+            </div>
+            <!-- Hidden Social Cards -->
+            <div id="socialSection" class="hidden-section grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Facebook Live</h3>
+                        <p class="text-gray-600">Interactive Q&A sessions that built authentic connections with the audience.</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">TikTok Strategy</h3>
+                        <p class="text-gray-600">Viral content that introduced the brand to a younger demographic.</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Pinterest Boards</h3>
+                        <p class="text-gray-600">Curated visual content that drove significant traffic to the website.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Video Content Section -->
+        <section class="mb-20">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Video Content</h2>
+                <button id="toggleVideo" class="text-red-600 hover:text-red-800 font-medium">View All</button>
+            </div>
+            <p class="text-gray-600 mb-8 max-w-3xl">
+                High-quality video productions ranging from explainer videos and testimonials to product demos and brand stories. Each video is crafted to convey messages powerfully and memorably.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                <!-- Video Cards (visible by default) -->
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Brand Documentary</h3>
+                        <p class="text-gray-600">Telling the inspiring story behind the company's founding and mission.</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Product Tutorial</h3>
+                        <p class="text-gray-600">Step-by-step guide demonstrating how to use our latest product.</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Customer Testimonials</h3>
+                        <p class="text-gray-600">Real stories from satisfied customers about how our product changed their lives.</p>
+                    </div>
+                </a>
+            </div>
+            <!-- Hidden Video Cards -->
+            <div id="videoSection" class="hidden-section grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Event Highlights</h3>
+                        <p class="text-gray-600">Capturing the energy and key moments from our annual conference.</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Animated Explainer</h3>
+                        <p class="text-gray-600">Simplifying complex concepts through engaging animation.</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition-all">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Behind-the-Scenes</h3>
+                        <p class="text-gray-600">Showing the human side of our company and how we create value.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 bg-red-600 rounded-2xl text-center mb-16">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Think I'm the right fit?</h2>
+                <p class="text-xl text-red-100 mb-8">
+                    Let's work together to create something amazing. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                </p>
+                <a href="mailto:patrick.j.leyland@gmail.com?subject=Contact Form" class="inline-block bg-white text-red-600 font-semibold px-8 py-3 rounded-lg hover:bg-red-50 transition-all">
+                    Get in touch
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (from patleyland.ca) -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <p class="text-2xl font-bold mb-2">Portfolio</p>
+                    <p class="text-gray-400">Creative content that makes an impact.</p>
+                </div>
+                <div class="flex flex-col md:flex-row md:space-x-12 space-y-4 md:space-y-0">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Navigation</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">About</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Projects</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Connect</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">LinkedIn</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Twitter</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Instagram</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Email</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+            </div>
         </div>
-      </a>
-            <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/500x500" alt="Campaign 3" class="w-full h-[300px] object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Campaign 3</h3>
-          <p class="text-gray-600 text-sm mt-2">Brief description for campaign 3.</p>
-        </div>
-      </a>
-            <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/500x500" alt="Campaign 4" class="w-full h-[300px] object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Campaign 4</h3>
-          <p class="text-gray-600 text-sm mt-2">Brief description for campaign 4.</p>
-        </div>
-      </a>
-            <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/500x500" alt="Campaign 5" class="w-full h-[300px] object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Campaign 5</h3>
-          <p class="text-gray-600 text-sm mt-2">Brief description for campaign 5.</p>
-        </div>
-      </a>
-            <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/500x500" alt="Campaign 6" class="w-full h-[300px] object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Campaign 6</h3>
-          <p class="text-gray-600 text-sm mt-2">Brief description for campaign 6.</p>
-        </div>
-      </a>
-    </div>
-    <!-- Right Button -->
-    <button id="rightBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-  </div>
-</section>
+    </footer>
 
+    <script>
+        // Toggle sections functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Blog section toggle
+            const toggleBlog = document.getElementById('toggleBlog');
+            const blogSection = document.getElementById('blogSection');
+            
+            toggleBlog.addEventListener('click', function() {
+                blogSection.classList.toggle('hidden-section');
+                blogSection.classList.toggle('visible-section');
+                toggleBlog.textContent = blogSection.classList.contains('hidden-section') ? 'View All' : 'Show Less';
+            });
 
-<!-- Video Content Section -->
-<section id="video">
-  <div class="max-w-7xl mx-auto px-6 mb-6 mt-12">
-    <h2 class="text-3xl font-bold mb-1 text-left">Video Content</h2>
-    <p class="text-sm text-gray-600 text-left">Videos written, directed, or produced to inform, educate, and entertain across multiple platforms.</p>
-  </div>
-  <div class="relative max-w-7xl mx-auto px-6">
-    <button id="leftBtnVideo" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-    <div id="video-cards" class="flex gap-4 scroll-smooth transition-all">
-      <!-- 6 Cards -->
-      <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/500x500" alt="Video 1" class="w-full h-[300px] object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Video 1</h3>
-          <p class="text-gray-600 text-sm mt-2">Short summary for video project 1.</p>
-        </div>
-      </a>
-      <!-- Repeat for Video 2–6 -->
-    </div>
-    <button id="rightBtnVideo" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-  </div>
-</section>
+            // Press section toggle
+            const togglePress = document.getElementById('togglePress');
+            const pressSection = document.getElementById('pressSection');
+            
+            togglePress.addEventListener('click', function() {
+                pressSection.classList.toggle('hidden-section');
+                pressSection.classList.toggle('visible-section');
+                togglePress.textContent = pressSection.classList.contains('hidden-section') ? 'View All' : 'Show Less';
+            });
 
-  
-<!-- Blog Section -->
-<section id="blogs">
-  <div class="max-w-7xl mx-auto px-6 mb-6 mt-12">
-    <h2 class="text-3xl font-bold mb-1 text-left">Blogs</h2>
-    <p class="text-sm text-gray-600 text-left">Original articles offering insights, how-to guides, and storytelling around key topics and trends.</p>
-  </div>
-  <div class="relative max-w-7xl mx-auto px-6">
-    <button id="leftBtnBlog" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-    <div id="blog-cards" class="flex gap-4 scroll-smooth transition-all">
-      <!-- 6 Cards -->
-      <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/500x500" alt="Blog 1" class="w-full h-[300px] object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Blog 1</h3>
-          <p class="text-gray-600 text-sm mt-2">Intro to blog post 1 and what readers can learn.</p>
-        </div>
-      </a>
-      <!-- Repeat for Blog 2–6 -->
-    </div>
-    <button id="rightBtnBlog" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-  </div>
-</section>
+            // Social section toggle
+            const toggleSocial = document.getElementById('toggleSocial');
+            const socialSection = document.getElementById('socialSection');
+            
+            toggleSocial.addEventListener('click', function() {
+                socialSection.classList.toggle('hidden-section');
+                socialSection.classList.toggle('visible-section');
+                toggleSocial.textContent = socialSection.classList.contains('hidden-section') ? 'View All' : 'Show Less';
+            });
 
-      
-<!-- Press Releases Section -->
-<section id="press">
-  <div class="max-w-7xl mx-auto px-6 mb-6 mt-12">
-    <h2 class="text-3xl font-bold mb-1 text-left">Press Releases</h2>
-    <p class="text-sm text-gray-600 text-left">Media and public-facing announcements designed to inform and attract coverage.</p>
-  </div>
-  <div class="relative max-w-7xl mx-auto px-6">
-    <button id="leftBtnPress" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-    <div id="press-cards" class="flex gap-4 scroll-smooth transition-all">
-      <!-- 6 Cards -->
-      <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg hover:shadow-xl transition">
-        <img src="https://via.placeholder.com/500x500" alt="Press Release 1" class="w-full h-[300px] object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Release 1</h3>
-          <p class="text-gray-600 text-sm mt-2">Overview of press release 1 and key takeaways.</p>
-        </div>
-      </a>
-      <!-- Repeat for Release 2–6 -->
-    </div>
-    <button id="rightBtnPress" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-  </div>
-</section>
-
-
-<script>
-  const setupCarousel = (prefix) => {
-    const cards = document.getElementById(`${prefix}-cards`);
-    document.getElementById(`rightBtn${prefix}`).addEventListener('click', () => {
-      cards.scrollBy({ left: 320, behavior: 'smooth' });
-    });
-    document.getElementById(`leftBtn${prefix}`).addEventListener('click', () => {
-      cards.scrollBy({ left: -320, behavior: 'smooth' });
-    });
-    document.getElementById(`toggle${prefix}`).addEventListener('click', (e) => {
-      cards.classList.toggle('overflow-x-auto');
-      e.target.textContent = e.target.textContent === 'Show All' ? 'Show Less' : 'Show All';
-    });
-  }
-  setupCarousel('social');
-  setupCarousel('video');
-  setupCarousel('blog');
-  setupCarousel('press');
-</script>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white text-center py-6">
-    <p>&copy; © 2025 WoodLand Media. All rights reserved.</p>
-  </footer>
-<script>
-  const setupCarousel = (containerId, leftBtnId, rightBtnId) => {
-    const container = document.getElementById(containerId);
-    const leftBtn = document.getElementById(leftBtnId);
-    const rightBtn = document.getElementById(rightBtnId);
-    const scrollAmount = 340; // Adjust if needed based on card width + gap
-
-    leftBtn.addEventListener("click", () => {
-      container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-    });
-
-    rightBtn.addEventListener("click", () => {
-      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    });
-  };
-
-  setupCarousel("social-cards", "leftBtn", "rightBtn");
-  setupCarousel("video-cards", "leftBtnVideo", "rightBtnVideo");
-  setupCarousel("blog-cards", "leftBtnBlog", "rightBtnBlog");
-  setupCarousel("press-cards", "leftBtnPress", "rightBtnPress");
-</script>
-
-
+            // Video section toggle
+            const toggleVideo = document.getElementById('toggleVideo');
+            const videoSection = document.getElementById('videoSection');
+            
+            toggleVideo.addEventListener('click', function() {
+                videoSection.classList.toggle('hidden-section');
+                videoSection.classList.toggle('visible-section');
+                toggleVideo.textContent = videoSection.classList.contains('hidden-section') ? 'View All' : 'Show Less';
+            });
+        });
+    </script>
 </body>
 </html>
