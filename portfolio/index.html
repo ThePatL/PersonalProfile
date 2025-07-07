@@ -33,7 +33,7 @@
     <button id="leftBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full z-10">
       <i class="fas fa-chevron-left"></i>
     </button>
-    <div id="social-cards" class="flex gap-4 overflow-hidden scroll-smooth transition-all">
+    <div id="social-cards" class="flex gap-4 overflow-x-auto scroll-smooth transition-all">
       <!-- 6 Cards -->
       <a href="#" class="flex-shrink-0 w-80 bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
         <img src="https://via.placeholder.com/500x500" alt="Campaign 1" class="w-full h-[300px] object-cover">
@@ -197,21 +197,29 @@
     <p>&copy; © 2025 WoodLand Media. All rights reserved.</p>
   </footer>
 <script>
-  const toggleBtn = document.getElementById('toggleSocial');
-  const extraCards = document.getElementById('social-extra');
-  let expanded = false;
+  const setupCarousel = (containerId, leftBtnId, rightBtnId) => {
+    const container = document.getElementById(containerId);
+    const leftBtn = document.getElementById(leftBtnId);
+    const rightBtn = document.getElementById(rightBtnId);
 
-  toggleBtn.addEventListener('click', () => {
-    expanded = !expanded;
+    if (!container || !leftBtn || !rightBtn) return;
 
-    if (expanded) {
-      extraCards.classList.remove('hidden');
-      toggleBtn.textContent = 'Show Less';
-    } else {
-      extraCards.classList.add('hidden');
-      toggleBtn.textContent = 'Show All';
-    }
-  });
+    const scrollAmount = 320; // Adjust to match card width + gap
+
+    leftBtn.addEventListener("click", () => {
+      container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    });
+
+    rightBtn.addEventListener("click", () => {
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
+  };
+
+  setupCarousel("social-cards", "leftBtn", "rightBtn");
+  setupCarousel("video-cards", "leftBtnVideo", "rightBtnVideo");
+  setupCarousel("blog-cards", "leftBtnBlog", "rightBtnBlog");
+  setupCarousel("press-cards", "leftBtnPress", "rightBtnPress");
 </script>
+
 </body>
 </html>
