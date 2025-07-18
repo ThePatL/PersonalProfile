@@ -48,18 +48,29 @@
                     <i class="fas fa-leaf maple-leaf text-2xl"></i>
                     <span class="text-xl font-bold">Patrick Leyland</span>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                <a href="https://patleyland.ca/#home" class="text-gray-600 hover:text-gray-900">Home</a>
-                <a href="#blog" class="text-gray-600 hover:text-gray-900">Blogs</a>
-                <a href="#pr" class="text-gray-600 hover:text-gray-900">PR</a>
-                <a href="#social" class="text-gray-600 hover:text-gray-900">Social</a>
-                <a href="#video" class="text-gray-600 hover:text-gray-900">Video</a>
-                <a href="https://patleyland.ca/#contact" class="text-gray-600 hover:text-gray-900">Contact</a>
-            </nav>
-            <button class="md:hidden text-gray-600">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="https://patleyland.ca/#home" class="text-red-600 font-medium">Home</a>
+                    <a href="#blog" class="hover:text-red-600 transition">Blogs</a>
+                    <a href="#pr" class="hover:text-red-600 transition">PR</a>
+                    <a href="#social" class="hover:text-red-600 transition">Social</a>
+                    <a href="#video" class="hover:text-red-600 transition">Videos</a>
+		            <a href="#contact" class="text-red-600 font-medium">Contact</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mt-4 pb-2" id="mobile-menu">
+                <a href="https://patleyland.ca/#home" class="block py-2 text-red-600 font-medium">Home</a>
+                <a href="#blog" class="block py-2 hover:text-red-600 transition">Blogs</a>
+                <a href="#pr" class="block py-2 hover:text-red-600 transition">PR</a>
+                <a href="#social" class="block py-2 hover:text-red-600 transition">Social</a>
+                <a href="#video" class="block py-2 hover:text-red-600 transition">Videos</a>
+		        <a href="#contact" class="block py-2 hover:text-red-600 transition">Contact</a>
+            </div>
         </div>
+    </nav>
     </header>
 
     <!-- Main Content -->
