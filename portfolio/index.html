@@ -408,7 +408,13 @@
     </footer>
 
     <script>
-        // Toggle sections functionality
+                // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+	    
+	    // Toggle sections functionality
         document.addEventListener('DOMContentLoaded', function() {
             // Blog section toggle
             const toggleBlog = document.getElementById('toggleBlog');
