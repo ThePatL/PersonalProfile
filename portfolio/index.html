@@ -3,42 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patrick Leyland | Communications and Content Marketing Professional</title>
+    <title>Patrick Leyland | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,248,240,0.9) 85%), url('https://images.pexels.com/photos/261579/pexels-photo-261579.jpeg') no-repeat center center;
-            background-size: cover;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         
-        .project-card:hover .project-overlay {
-            opacity: 1;
-            transform: translateY(0);
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
         }
-        
-        .project-overlay {
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        
+
         .maple-leaf {
             color: #d52b1e;
         }
         
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
         
-        .floating {
-            animation: float 3s ease-in-out infinite;
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+        
+        .hidden-section {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        
+        .visible-section {
+            max-height: 2000px;
+            transition: max-height 0.8s ease-in;
         }
     </style>
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">
+
 
     <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
